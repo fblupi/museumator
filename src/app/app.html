@@ -1,1 +1,17 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="rootpage">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ 'MENU' | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(settingsPage)">
+        <ion-icon name="settings"></ion-icon>
+        {{ 'SETTINGS' | translate }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #rootpage [root]="rootPage"></ion-nav>

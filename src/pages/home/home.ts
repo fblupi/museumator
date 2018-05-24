@@ -8,26 +8,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage {
 
-  languages: any[] = [];
-
   constructor(
     private translate: TranslateService,
     public navCtrl: NavController
-  ) {
-    this.languages = [
-      {
-        value: 'es',
-        label: 'Español'
-      },
-      {
-        value: 'en',
-        label: 'English'
-      }
-    ]
-  }
-
-  public changeLanguage(language) {
-    this.translate.use(language);
-  }
+  ) { }
 
 }

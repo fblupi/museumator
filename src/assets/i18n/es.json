@@ -1,7 +1,10 @@
 {
   "APP_NAME": "Museumator",
   "HOME_DESCRIPTION": "Museumator es una aplicación en ionic para crear aplicaciones multimedia para museos. Si necesitas una aplicación para tu museo estás a solo un paso de tenerla. Somos Museumator, ¡creamos cultura para ti y todos los que te rodean!",
+  "LANGUAGE": "Idioma",
+  "MENU": "Menú",
   "OR_INTRODUCE_THE_CODE": "o introduce el código",
   "SCAN": "Escanear",
+  "SETTINGS": "Herramientas",
   "WELCOME_TO": "Bienvenido a"
 }
