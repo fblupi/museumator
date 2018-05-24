@@ -1,10 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'WELCOME' | translate }}
+      {{ 'APP_NAME' | translate}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <h1>{{ 'WELCOME_TO' | translate }} {{ 'APP_NAME' | translate}}</h1>
+  <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
+  <img class="home-logo" src="assets/imgs/logo.png">
+  <div class="actions-container">
+    <button ion-button icon-start full>
+        <ion-icon name="barcode"></ion-icon>
+        {{ 'SCAN' | translate }}
+      </button>
+      <div>{{ 'OR_INTRODUCE_THE_CODE' | translate}}</div>
+  </div>
 </ion-content>
