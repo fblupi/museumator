@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			{{ 'SETTINGS' | translate }}
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>{{ 'LANGUAGE' | translate }}</ion-label>
+			<ion-select (ionChange)="changeLanguage($event)" okText="{{ 'OK' | translate }}" cancelText="{{ 'CANCEL' | translate }}">
+				<ion-option *ngFor="let language of languages" [value]="language.value" [selected]="language.value == currentLanguage">
+					{{ language.label }}
+				</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+</ion-content>

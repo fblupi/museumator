@@ -1,8 +1,11 @@
 {
   "APP_NAME": "Museumator",  
+  "CANCEL": "Cancel",
+  "HOME": "Home",
   "HOME_DESCRIPTION": "Museumator is an ionic app to build custom multimedia museum apps. If you need a multimedia and multiplatform app for your museum you are one step away for getting it. Just contact us! We are Museumator, we build culture, we build you and everybody around you.",
   "LANGUAGE": "Language",
   "MENU": "Menu",
+  "OK": "Ok",
   "OR_INTRODUCE_THE_CODE": "or introduce the code",
   "SCAN": "Scan",
   "SETTINGS": "Settings",

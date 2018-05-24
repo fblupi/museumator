@@ -10,7 +10,7 @@ export class HomePage {
 
   constructor(
     private translate: TranslateService,
-    public navCtrl: NavController
+    navCtrl: NavController
   ) { }
 
 }
