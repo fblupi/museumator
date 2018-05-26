@@ -8,8 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SettingsPage {
 
-  languages: any[] = [];
-  currentLanguage: String;
+  private languages: any[] = [];
+  private currentLanguage: String;
 
   constructor(
     private translate: TranslateService,
@@ -28,11 +28,11 @@ export class SettingsPage {
     ];
   }
 
-  goBack() {
+  private goBack() {
     this.navCtrl.pop();
   }
 
-  changeLanguage(language) {
+  private changeLanguage(language) {
     this.translate.use(language);
   }
 

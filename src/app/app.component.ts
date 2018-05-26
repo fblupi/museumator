@@ -16,32 +16,30 @@ export class MyApp {
   rootPage: any = HomePage;
 
   constructor(
-    platform: Platform, 
-    statusBar: StatusBar, 
-    splashScreen: SplashScreen,
+    private platform: Platform, 
+    private statusBar: StatusBar, 
+    private splashScreen: SplashScreen,
     private menuCtrl: MenuController,
     private translate: TranslateService,
   ) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
       this.initTranslate();
     });
   }
 
-  initTranslate() {
+  private initTranslate() {
     this.translate.setDefaultLang('es');
     this.translate.use('es');
   }
 
-  goToSettingsPage() {
+  private goToSettingsPage() {
     this.nav.push(SettingsPage);
     this.closeMenu();
   }
 
-  closeMenu() {
+  private closeMenu() {
     this.menuCtrl.close();
   }
 

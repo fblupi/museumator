@@ -10,14 +10,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>{{ 'WELCOME_TO' | translate }} {{ 'APP_NAME' | translate}}</h1>
+  <h1>{{ 'WELCOME_TO' | translate }} {{ 'APP_NAME' | translate }}</h1>
   <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
   <img class="home-logo" src="assets/imgs/logo.png">
   <div class="actions-container">
     <button ion-button icon-start full>
-        <ion-icon name="barcode"></ion-icon>
-        {{ 'SCAN' | translate }}
-      </button>
-      <div>{{ 'OR_INTRODUCE_THE_CODE' | translate}}</div>
+      <ion-icon name="barcode"></ion-icon>
+      {{ 'SCAN' | translate }}
+    </button>
+    <div class="enter-code-link" (click)="enterCodeAlert()">{{ 'OR_INTRODUCE_THE_CODE' | translate }}</div>
   </div>
 </ion-content>

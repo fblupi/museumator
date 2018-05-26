@@ -11,6 +11,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
+import { StoresServiceProvider } from '../providers/stores-service/stores-service';
+import { ItemsServiceProvider } from '../providers/items-service/items-service';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,11 @@ import { SettingsPage } from '../pages/settings/settings';
     SettingsPage
   ],
   providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    StoresServiceProvider,
+    ItemsServiceProvider
   ]
 })
 export class AppModule {}

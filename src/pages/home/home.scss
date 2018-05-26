@@ -7,5 +7,9 @@ page-home {
     .actions-container {
         margin: 20px 0;
         text-align: center;
+        .enter-code-link {
+            margin-top: 10px;
+            cursor: pointer;
+        }
     }
 }
