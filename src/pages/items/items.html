@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ item['name_' + language] }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="item-image-container" *ngIf="item['image']">
+    <img class="item-image" src="{{ item['image'] }}">
+  </div>
+  <div class="item-description-container">
+    <h3>{{ item['name_' + language] }}</h3>
+    <p>{{ item['description_' + language] }}</p>
+  </div>
+</ion-content>

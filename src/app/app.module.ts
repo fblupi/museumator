@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { StoresPage } from '../pages/stores/stores';
+import { ItemsPage } from '../pages/items/items';
 
 import { StoresServiceProvider } from '../providers/stores-service/stores-service';
 import { ItemsServiceProvider } from '../providers/items-service/items-service';
@@ -21,7 +22,8 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
     MyApp,
     HomePage,
     SettingsPage,
-    StoresPage
+    StoresPage,
+    ItemsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
     MyApp,
     HomePage,
     SettingsPage,
-    StoresPage
+    StoresPage,
+    ItemsPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

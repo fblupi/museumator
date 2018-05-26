@@ -1,0 +1,17 @@
+page-items {
+  .item-image-container {
+    .item-image {
+      width: 100%;
+      object-fit: cover;
+      @media screen and (max-height: 1023px) {
+        height: 200px;
+      }
+      @media screen and (min-height: 1024px) {
+        height: 400px;
+      }
+    }
+  }
+  .item-description-container {
+    margin-top: 12px;
+  }
+}
