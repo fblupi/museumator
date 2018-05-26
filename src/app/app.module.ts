@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
+import { AboutUsPage } from '../pages/about-us/about-us';
 import { StoresPage } from '../pages/stores/stores';
 import { ItemsPage } from '../pages/items/items';
 
@@ -22,6 +23,7 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
     MyApp,
     HomePage,
     SettingsPage,
+    AboutUsPage,
     StoresPage,
     ItemsPage
   ],
@@ -42,6 +44,7 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
     MyApp,
     HomePage,
     SettingsPage,
+    AboutUsPage,
     StoresPage,
     ItemsPage
   ],

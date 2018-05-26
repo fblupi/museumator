@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
+import { AboutUsPage } from '../pages/about-us/about-us';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,6 +37,11 @@ export class MyApp {
 
   private goToSettingsPage() {
     this.nav.push(SettingsPage);
+    this.closeMenu();
+  }
+
+  private goToAboutUsPage() {
+    this.nav.push(AboutUsPage);
     this.closeMenu();
   }
 

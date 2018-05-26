@@ -1,4 +1,8 @@
 {
+  "ABOUT_US": "Sobre nosotros",   
+  "ABOUT_US_MESSAGE": "<p>Este es un museo falso. Se ha hecho solo para mostrar las posibilidades que ofrecemos con esta aplicación.</p><p>Si quieres contactar con nosotros, podéis enviarnos un email a <a href=\"mailto:franciscojavierbolivarlupianez@gmail.com\">franciscojavierbolivarlupianez@gmail.com</a> y os contestaremos lo más rápido posible.</p><p>Nuestra ubicación es también falsa, por eso ves el mapa en mitad del Pacífico.</p>",
+  "ABOUT_US_MAP_LAT": "-10.2772769",
+  "ABOUT_AS_MAP_LON": "-130.3606583",
   "APP_NAME": "Museumator",
   "CANCEL": "Cancelar",
   "CODE": "Código",
