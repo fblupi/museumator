@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { AlertController, NavController, ToastController } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
-import { StoresServiceProvider } from '../../providers/stores-service/stores-service'
-import { ItemsServiceProvider } from '../../providers/items-service/items-service'
+import { StoresPage } from '../stores/stores';
 
+import { StoresServiceProvider } from '../../providers/stores-service/stores-service';
+
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,7 +15,6 @@ export class HomePage {
 
   constructor(
     private translate: TranslateService,
-    private items: ItemsServiceProvider,
     private stores: StoresServiceProvider,
     private alertCtrl: AlertController,
     private navCtrl: NavController,
@@ -55,7 +56,7 @@ export class HomePage {
   }
 
   private goodResponse(store) {
-    console.log(store);
+    this.navCtrl.push(StoresPage, { store: store });
   }
 
   private showErrorToast(message) {

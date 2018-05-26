@@ -10,7 +10,7 @@ export class StoresServiceProvider {
     this.http.get('./assets/db/stores.json').subscribe(data => { this.stores = data; }); 
   }
 
-  get(id) {
+  public get(id) {
     return this.stores[id];
   }
 

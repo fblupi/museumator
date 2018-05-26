@@ -1,0 +1,22 @@
+page-stores {
+  .store-image-container {
+    .store-image {
+      width: 100%;
+      object-fit: cover;
+      @media screen and (max-height: 1023px) {
+        height: 200px;
+      }
+      @media screen and (min-height: 1024px) {
+        height: 400px;
+      }
+    }
+  }
+  .store-description-container {
+    margin-top: 12px;
+  }
+  .item-thumbnail-container {
+    .item-thumbnail {
+      object-fit: cover;
+    }
+  }
+}

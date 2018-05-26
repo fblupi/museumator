@@ -11,6 +11,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
+import { StoresPage } from '../pages/stores/stores';
+
 import { StoresServiceProvider } from '../providers/stores-service/stores-service';
 import { ItemsServiceProvider } from '../providers/items-service/items-service';
 
@@ -18,7 +20,8 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
   declarations: [
     MyApp,
     HomePage,
-    SettingsPage
+    SettingsPage,
+    StoresPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
   entryComponents: [
     MyApp,
     HomePage,
-    SettingsPage
+    SettingsPage,
+    StoresPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
