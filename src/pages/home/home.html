@@ -14,7 +14,7 @@
   <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
   <img class="home-logo" src="assets/imgs/logo.png">
   <div class="actions-container">
-    <button ion-button icon-start full>
+    <button ion-button icon-start full (click)="launchQRScanner()">
       <ion-icon name="barcode"></ion-icon>
       {{ 'SCAN' | translate }}
     </button>

@@ -6,7 +6,6 @@ import { ItemsPage } from '../items/items';
 
 import { ItemsServiceProvider } from '../../providers/items-service/items-service';
 
-@IonicPage()
 @Component({
   selector: 'page-stores',
   templateUrl: 'stores.html',

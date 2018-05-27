@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { StoresPage } from '../stores/stores';
 
 import { StoresServiceProvider } from '../../providers/stores-service/stores-service';
 
-@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -18,8 +18,15 @@ export class HomePage {
     private stores: StoresServiceProvider,
     private alertCtrl: AlertController,
     private navCtrl: NavController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private barcodeScanner: BarcodeScanner
   ) {}
+
+  private launchQRScanner() {
+    this.barcodeScanner.scan()
+      .then(result => this.enterCode(result.text))
+      .catch(error => console.log(error));
+  }
 
   private enterCodeAlert() {
     let alert = this.alertCtrl.create({
@@ -38,15 +45,15 @@ export class HomePage {
         },
         {
           text: this.translate.instant('OK'),
-          handler: data => this.enterCodeAlertOk(data)
+          handler: data => this.enterCode(data.code)
         }
       ]
     });
     alert.present();
   }
 
-  private enterCodeAlertOk(data) {
-    let store = this.stores.get(data.code);
+  private enterCode(code) {
+    let store = this.stores.get(code);
     if (store !== undefined) {
       this.goodResponse(store);
     } else {

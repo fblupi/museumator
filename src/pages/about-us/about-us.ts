@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-@IonicPage()
 @Component({
   selector: 'page-about-us',
   templateUrl: 'about-us.html',
