@@ -4,10 +4,10 @@ page-stores {
       width: 100%;
       object-fit: cover;
       @media screen and (max-height: 1023px) {
-        height: 200px;
+        height: $image-height-mobile;
       }
       @media screen and (min-height: 1024px) {
-        height: 400px;
+        height: $image-height-tablet;
       }
     }
   }
