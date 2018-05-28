@@ -39,7 +39,9 @@ export class MyApp {
   }
 
   private initTranslate(globalizationResult: string = '') {
-    this.translate.setDefaultLang(this.getLanguage(globalizationResult));
+    let language = this.getLanguage(globalizationResult)
+    this.translate.setDefaultLang(language);
+    this.translate.use(language);
   }
 
   private goToSettingsPage() {
