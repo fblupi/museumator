@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ItemsServiceProvider {
 
-  private items: any;
+  items: any;
 
   constructor(public http: HttpClient) {
     this.http.get('./assets/db/items.json').subscribe(data => { this.items = data; });
   }
 
-  public get(id) {
+  get(id: string) {
     return this.items[id];
   }
 

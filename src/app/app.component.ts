@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, NavController, MenuController } from 'ionic-angular';
+import { MenuController, NavController, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,9 +18,9 @@ export class MyApp {
   rootPage: any = HomePage;
 
   constructor(
-    private platform: Platform, 
-    private statusBar: StatusBar, 
-    private splashScreen: SplashScreen,
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
     private menuCtrl: MenuController,
     private translate: TranslateService,
     private globalization: Globalization
@@ -38,27 +38,27 @@ export class MyApp {
     });
   }
 
-  private initTranslate(globalizationResult: string = '') {
+  goToSettingsPage() {
+    this.nav.push(SettingsPage);
+    this.closeMenu();
+  }
+
+  goToAboutUsPage() {
+    this.nav.push(AboutUsPage);
+    this.closeMenu();
+  }
+
+  closeMenu() {
+    this.menuCtrl.close();
+  }
+
+  initTranslate(globalizationResult: string = '') {
     let language = this.getLanguage(globalizationResult)
     this.translate.setDefaultLang(language);
     this.translate.use(language);
   }
 
-  private goToSettingsPage() {
-    this.nav.push(SettingsPage);
-    this.closeMenu();
-  }
-
-  private goToAboutUsPage() {
-    this.nav.push(AboutUsPage);
-    this.closeMenu();
-  }
-
-  private closeMenu() {
-    this.menuCtrl.close();
-  }
-
-  private getLanguage(globalizationResult: string) {
+  getLanguage(globalizationResult: string) {
     let language = 'en';
     if (globalizationResult !== '') {
       if (globalizationResult.indexOf('es') != -1) {

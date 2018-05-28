@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class StoresServiceProvider {
 
-  private stores: any;
+  stores: any;
 
   constructor(public http: HttpClient) {
     this.http.get('./assets/db/stores.json').subscribe(data => { this.stores = data; }); 
   }
 
-  public get(id) {
+  get(id: string) {
     return this.stores[id];
   }
 

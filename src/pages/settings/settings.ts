@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,8 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SettingsPage {
 
-  private languages: any[] = [];
-  private currentLanguage: String;
+  languages: any[] = [];
+  currentLanguage: String;
 
   constructor(
     private translate: TranslateService,
@@ -28,11 +28,11 @@ export class SettingsPage {
     ];
   }
 
-  private goBack() {
+  goBack() {
     this.navCtrl.pop();
   }
 
-  private changeLanguage(language) {
+  changeLanguage(language: string) {
     this.translate.use(language);
   }
 
