@@ -23,7 +23,14 @@
       </div>
       <div class="store-description-container">
         <h3>{{ store['name_' + language] }}</h3>
-        <p>{{ store['description_' + language] }}</p>
+        <div class="store-description-text-container" *ngIf="store['description_' + language]">
+          <h6>{{ 'DESCRIPTION' | translate }}</h6>
+          <audio controls controlsList="nodownload" *ngIf="store['audio_' + language]">
+            <source src="{{ store['audio_' + language] }}" type="audio/mpeg">
+            {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+          </audio>
+          <p>{{ store['description_' + language] }}</p>
+        </div>
       </div>
     </div>
     <div *ngSwitchCase="'items'">

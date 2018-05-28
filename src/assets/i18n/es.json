@@ -15,8 +15,10 @@
   "ITEMS": "Items",
   "LANGUAGE": "Idioma",
   "MENU": "Menú",
+  "NO_AUDIO_BROWSER_SUPPORT": "Tu dispositivo no soporta el elemento de audio",
   "OK": "OK",
   "OR_INTRODUCE_THE_CODE": "o introduce el código",
+  "PLAY_ME": "¡Escúchame!",
   "SCAN": "Escanear",
   "SETTINGS": "Herramientas",
   "WELCOME_TO": "Bienvenido a"

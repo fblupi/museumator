@@ -10,6 +10,20 @@
   </div>
   <div class="item-description-container">
     <h3>{{ item['name_' + language] }}</h3>
-    <p>{{ item['description_' + language] }}</p>
+    <div class="item-description-sound-container" *ngIf="item['sound']">
+      <h6>{{ 'PLAY_ME' | translate }}</h6>
+      <audio controls controlsList="nodownload" *ngIf="item['sound']">
+        <source src="{{ item['sound'] }}" type="audio/mpeg">
+        {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+      </audio>
+    </div>
+    <div class="item-description-text-container" *ngIf="item['description_' + language]">
+      <h6>{{ 'DESCRIPTION' | translate }}</h6>
+      <audio controls controlsList="nodownload" *ngIf="item['audio_' + language]">
+        <source src="{{ item['audio_' + language] }}" type="audio/mpeg">
+        {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+      </audio>
+      <p>{{ item['description_' + language] }}</p>
+    </div>
   </div>
 </ion-content>
