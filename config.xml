@@ -84,4 +84,5 @@
     <engine name="ios" spec="4.5.4" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.1.2" />
     <engine name="android" spec="~7.0.0" />
+    <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
 </widget>

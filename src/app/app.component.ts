@@ -3,6 +3,7 @@ import { Platform, Nav, NavController, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
+import { Globalization } from '@ionic-native/globalization';
 
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
@@ -22,17 +23,23 @@ export class MyApp {
     private splashScreen: SplashScreen,
     private menuCtrl: MenuController,
     private translate: TranslateService,
+    private globalization: Globalization
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
-      this.initTranslate();
+      this.globalization.getPreferredLanguage()
+        .then((result) => {
+          this.initTranslate(result.value)
+        })
+        .catch(() => {
+          this.initTranslate();
+        });
     });
   }
 
-  private initTranslate() {
-    this.translate.setDefaultLang('es');
-    this.translate.use('es');
+  private initTranslate(globalizationResult: string = '') {
+    this.translate.setDefaultLang(this.getLanguage(globalizationResult));
   }
 
   private goToSettingsPage() {
@@ -47,6 +54,16 @@ export class MyApp {
 
   private closeMenu() {
     this.menuCtrl.close();
+  }
+
+  private getLanguage(globalizationResult: string) {
+    let language = 'en';
+    if (globalizationResult !== '') {
+      if (globalizationResult.indexOf('es') != -1) {
+        language = 'es';
+      }
+    }
+    return language;
   }
 
 }
