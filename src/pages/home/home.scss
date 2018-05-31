@@ -1,15 +1,15 @@
 page-home {
-    .home-logo {
-        max-width: 50%;
-        display: block;
-        margin: auto;
+  .home-logo {
+    max-width: 50%;
+    display: block;
+    margin: auto;
+  }
+  .actions-container {
+    margin: 20px 0;
+    text-align: center;
+    .enter-code-link {
+      margin-top: 10px;
+      cursor: pointer;
     }
-    .actions-container {
-        margin: 20px 0;
-        text-align: center;
-        .enter-code-link {
-            margin-top: 10px;
-            cursor: pointer;
-        }
-    }
+  }
 }

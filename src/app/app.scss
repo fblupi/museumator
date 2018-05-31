@@ -14,3 +14,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.image-container {
+  .image {
+    width: 100%;
+    object-fit: cover;
+    @media screen and (max-height: 1023px) {
+      height: $image-height-mobile;
+    }
+    @media screen and (min-height: 1024px) {
+      height: $image-height-tablet;
+    }
+  }
+}
+.description-container {
+  margin-top: 12px;
+}
+audio {
+  width: 100%;
+}

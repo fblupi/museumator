@@ -18,12 +18,12 @@
 <ion-content padding>
   <div [ngSwitch]="page">
     <div *ngSwitchCase="'description'">
-      <div class="store-image-container" *ngIf="store['image']">
-        <img class="store-image" src="{{ store['image'] }}">
+      <div class="image-container" *ngIf="store['image']">
+        <img class="image" src="{{ store['image'] }}">
       </div>
-      <div class="store-description-container">
+      <div class="description-container">
         <h3>{{ store['name_' + language] }}</h3>
-        <div class="store-description-text-container" *ngIf="store['description_' + language]">
+        <div class="description-text-container" *ngIf="store['description_' + language]">
           <h6>{{ 'DESCRIPTION' | translate }}</h6>
           <audio controls controlsList="nodownload" *ngIf="store['audio_' + language]">
             <source src="{{ store['audio_' + language] }}" type="audio/mpeg">

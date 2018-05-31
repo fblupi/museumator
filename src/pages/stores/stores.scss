@@ -1,25 +1,7 @@
 page-stores {
-  .store-image-container {
-    .store-image {
-      width: 100%;
-      object-fit: cover;
-      @media screen and (max-height: 1023px) {
-        height: $image-height-mobile;
-      }
-      @media screen and (min-height: 1024px) {
-        height: $image-height-tablet;
-      }
-    }
-  }
-  .store-description-container {
-    margin-top: 12px;
-  }
   .item-thumbnail-container {
     .item-thumbnail {
       object-fit: cover;
     }
-  }
-  audio {
-    width: 100%;
   }
 }
