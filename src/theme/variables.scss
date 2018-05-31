@@ -42,18 +42,23 @@ $colors: (
   dark:       #222
 );
 
+$text-color: #000;
+$background-color: #fff;
+$toolbar-background: #f8f8f8;
+$alert-background: #f8f8f8;
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$alert-ios-background: $alert-background;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$alert-md-background-color: $alert-background;
 
 
 
@@ -61,7 +66,7 @@ $colors: (
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+$alert-wp-background: $alert-background;
 
 
 // App Theme
