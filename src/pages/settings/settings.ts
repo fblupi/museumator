@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-settings',
@@ -13,7 +14,8 @@ export class SettingsPage {
 
   constructor(
     private translate: TranslateService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private nativeStorage: NativeStorage
   ) { 
     this.currentLanguage = this.translate.currentLang;
     this.languages = [
@@ -34,6 +36,7 @@ export class SettingsPage {
 
   changeLanguage(language: string) {
     this.translate.use(language);
+    this.nativeStorage.setItem('language', language);
   }
 
 }

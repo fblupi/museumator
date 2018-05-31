@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { Globalization } from '@ionic-native/globalization';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
@@ -23,18 +24,13 @@ export class MyApp {
     public splashScreen: SplashScreen,
     private menuCtrl: MenuController,
     private translate: TranslateService,
-    private globalization: Globalization
+    private globalization: Globalization,
+    private nativeStorage: NativeStorage
   ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
-      this.globalization.getPreferredLanguage()
-        .then((result) => {
-          this.initTranslate(result.value)
-        })
-        .catch(() => {
-          this.initTranslate();
-        });
+      this.loadLanguage();
     });
   }
 
@@ -52,8 +48,22 @@ export class MyApp {
     this.menuCtrl.close();
   }
 
-  initTranslate(globalizationResult: string = '') {
-    let language = this.getLanguage(globalizationResult)
+  loadLanguage() {
+    this.nativeStorage.getItem('language').then(
+      data => this.initTranslate(data),
+      error => {
+        this.globalization.getPreferredLanguage()
+          .then((result) => {
+            this.initTranslate(this.getLanguage(result.value))
+          })
+          .catch(() => {
+            this.initTranslate();
+          });
+      }
+    );
+  }
+
+  initTranslate(language: string = 'en') {
     this.translate.setDefaultLang(language);
     this.translate.use(language);
   }
@@ -69,4 +79,3 @@ export class MyApp {
   }
 
 }
-
