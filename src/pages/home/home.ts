@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, NavController, Platform, ToastController } from 'ionic-angular';
+import { AlertController, NavController, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -18,7 +18,6 @@ export class HomePage {
     private stores: StoresServiceProvider,
     private alertCtrl: AlertController,
     private navCtrl: NavController,
-    private platform: Platform,
     private toastCtrl: ToastController,
     private barcodeScanner: BarcodeScanner
   ) {}
@@ -26,12 +25,7 @@ export class HomePage {
   launchQRScanner(event: Event) {
     this.barcodeScanner.scan({ formats: 'QR_CODE' })
       .then(result => {
-        if (result.cancelled) {
-          this.platform.registerBackButtonAction(() => {
-            event.preventDefault();
-            event.stopPropagation();
-          });
-        } else {
+        if (!result.cancelled) {
           this.enterCode(result.text);
         }
       })
