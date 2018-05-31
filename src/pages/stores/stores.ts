@@ -12,18 +12,18 @@ import { ItemsServiceProvider } from '../../providers/items-service/items-servic
 })
 export class StoresPage {
 
-  page = 'description';
-  language = '';
+  page: string = 'description';
+  language: string = '';
   store: any;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    public items: ItemsServiceProvider,
-    public translate: TranslateService
+    private navCtrl: NavController, 
+    private navParams: NavParams,
+    private translate: TranslateService,
+    public items: ItemsServiceProvider
   ) {
     this.language = this.translate.currentLang;
-    this.store = navParams.get('store');
+    this.store = this.navParams.get('store');
   }
 
   goToItem(item: string) {

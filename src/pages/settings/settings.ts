@@ -10,7 +10,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class SettingsPage {
 
   languages: any[] = [];
-  currentLanguage: String;
+  currentLanguage: string;
 
   constructor(
     private translate: TranslateService,

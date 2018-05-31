@@ -15,11 +15,11 @@ export class HomePage {
 
   constructor(
     private translate: TranslateService,
-    private stores: StoresServiceProvider,
     private alertCtrl: AlertController,
     private navCtrl: NavController,
     private toastCtrl: ToastController,
-    private barcodeScanner: BarcodeScanner
+    private barcodeScanner: BarcodeScanner,
+    private stores: StoresServiceProvider,
   ) {}
 
   launchQRScanner(event: Event) {

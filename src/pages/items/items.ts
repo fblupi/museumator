@@ -8,13 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ItemsPage {
 
-  language = '';
+  language: string = '';
   item: any;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    public translate: TranslateService
+    private navCtrl: NavController, 
+    private navParams: NavParams,
+    private translate: TranslateService
   ) {
     this.language = this.translate.currentLang;
     this.item = navParams.get('item');

@@ -88,4 +88,8 @@
     <engine name="ios" spec="4.5.4" />
     <engine name="browser" spec="5.0.3" />
     <allow-navigation href="http://192.168.1.131:8100" />
+    <plugin name="cordova-plugin-googlemaps" spec="~2.1.1">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAWcHTIrrNOA-RDmTmDFmGGx_TrB4KQbTg" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyBKR6JSvHUQFRQxRS1dXhVJBL__XJPoccc" />
+    </plugin>
 </widget>

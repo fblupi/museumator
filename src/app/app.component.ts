@@ -16,7 +16,7 @@ import { AboutUsPage } from '../pages/about-us/about-us';
 export class MyApp {
   @ViewChild('rootpage') nav: NavController
 
-  rootPage: any = HomePage;
+  rootPage: any;
 
   constructor(
     public platform: Platform, 
@@ -28,6 +28,7 @@ export class MyApp {
     private nativeStorage: NativeStorage
   ) {
     platform.ready().then(() => {
+      this.rootPage = HomePage;
       statusBar.styleDefault();
       splashScreen.hide();
       this.loadLanguage();
