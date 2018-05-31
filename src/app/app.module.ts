@@ -21,6 +21,7 @@ import { ItemsPage } from '../pages/items/items';
 
 import { StoresServiceProvider } from '../providers/stores-service/stores-service';
 import { ItemsServiceProvider } from '../providers/items-service/items-service';
+import { UITranslationsProvider } from '../providers/ui-translations/ui-translations';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ItemsServiceProvider } from '../providers/items-service/items-service';
     NativeStorage,
     GoogleMaps,
     StoresServiceProvider,
-    ItemsServiceProvider
+    ItemsServiceProvider,
+    UITranslationsProvider
   ]
 })
 export class AppModule {}

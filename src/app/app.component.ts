@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { AboutUsPage } from '../pages/about-us/about-us';
 
+import { UITranslationsProvider } from '../providers/ui-translations/ui-translations';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,7 +27,8 @@ export class MyApp {
     private menuCtrl: MenuController,
     private translate: TranslateService,
     private globalization: Globalization,
-    private nativeStorage: NativeStorage
+    private nativeStorage: NativeStorage,
+    private uiTranslations: UITranslationsProvider
   ) {
     platform.ready().then(() => {
       this.rootPage = HomePage;
@@ -64,9 +67,10 @@ export class MyApp {
     );
   }
 
-  initTranslate(language: string = 'en') {
+  initTranslate(language: string = 'es') {
     this.translate.setDefaultLang(language);
     this.translate.use(language);
+    this.uiTranslations.translateElements();
   }
 
   getLanguage(globalizationResult: string) {
