@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -12,12 +12,11 @@ export class ItemsPage {
   item: any;
 
   constructor(
-    private navCtrl: NavController, 
     private navParams: NavParams,
     private translate: TranslateService
   ) {
     this.language = this.translate.currentLang;
-    this.item = navParams.get('item');
+    this.item = this.navParams.get('item');
   }
 
 }

@@ -84,12 +84,12 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.1.2" />
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.3.1" />
-    <engine name="android" spec="7.0.0" />
-    <engine name="ios" spec="4.5.4" />
-    <engine name="browser" spec="5.0.3" />
     <allow-navigation href="http://192.168.1.131:8100" />
     <plugin name="cordova-plugin-googlemaps" spec="~2.1.1">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAWcHTIrrNOA-RDmTmDFmGGx_TrB4KQbTg" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyBKR6JSvHUQFRQxRS1dXhVJBL__XJPoccc" />
     </plugin>
+    <engine name="android" spec="7.0.0" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="browser" spec="5.0.3" />
 </widget>

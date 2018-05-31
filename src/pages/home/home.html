@@ -11,7 +11,6 @@
 
 <ion-content padding>
   <h1>{{ 'WELCOME_TO' | translate }} {{ 'APP_NAME' | translate }}</h1>
-  <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
   <img class="home-logo" src="assets/imgs/logo.png">
   <div class="actions-container">
     <button ion-button icon-start full (click)="launchQRScanner($event)">
@@ -20,4 +19,5 @@
     </button>
     <div class="enter-code-link" (click)="enterCodeAlert()">{{ 'OR_INTRODUCE_THE_CODE' | translate }}</div>
   </div>
+  <p>{{ 'HOME_DESCRIPTION' | translate }}</p>
 </ion-content>
