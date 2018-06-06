@@ -1,0 +1,12 @@
+page-about-us {
+  #map-canvas {
+    display: block;
+    width: 100%;
+    @media screen and (max-height: 1023px) {
+      height: $image-height-mobile;
+    }
+    @media screen and (min-height: 1024px) {
+      height: $image-height-tablet;
+    }
+  }
+}

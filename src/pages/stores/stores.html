@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>{{ store['name_' + language] }}</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="page">
+      <ion-segment-button value="description">
+        {{ 'DESCRIPTION' | translate }}
+      </ion-segment-button>
+      <ion-segment-button value="items">
+        {{ 'ITEMS' | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]="page">
+    <div *ngSwitchCase="'description'">
+      <div class="image-container" *ngIf="store['image']">
+        <img class="image" src="{{ store['image'] }}">
+      </div>
+      <div class="description-container">
+        <h3>{{ store['name_' + language] }}</h3>
+        <div class="description-text-container" *ngIf="store['description_' + language]">
+          <h6>{{ 'DESCRIPTION' | translate }}</h6>
+          <audio controls controlsList="nodownload" *ngIf="store['audio_' + language]">
+            <source src="{{ store['audio_' + language] }}" type="audio/mpeg">
+            {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+          </audio>
+          <p>{{ store['description_' + language] }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'items'">
+      <ion-list>
+        <ion-item *ngFor="let id of store['items']" (click)="goToItem(items.get(id))">
+          <ion-thumbnail class="item-thumbnail-container" item-start>
+            <img class="item-thumbnail" src="{{ items.get(id)['image'] }}" *ngIf="items.get(id)['image']">
+          </ion-thumbnail>
+          <h2>{{ items.get(id)['name_' + language] }}</h2>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

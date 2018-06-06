@@ -1,0 +1,21 @@
+<ion-menu [content]="rootpage">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ 'MENU' | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="goToSettingsPage()">
+        <ion-icon name="settings"></ion-icon>
+        {{ 'SETTINGS' | translate }}
+      </button>
+      <button ion-item (click)="goToAboutUsPage()">
+        <ion-icon name="information-circle"></ion-icon>
+        {{ 'ABOUT_US' | translate }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #rootpage [root]="rootPage"></ion-nav>
