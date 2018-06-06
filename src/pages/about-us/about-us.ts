@@ -17,7 +17,7 @@ export class AboutUsPage {
     public sanitizer: DomSanitizer
   ) {}
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.loadMap();
   }
 
