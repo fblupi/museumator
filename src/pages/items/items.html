@@ -5,25 +5,29 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="image-container" *ngIf="item['image']">
-    <img class="image" src="{{ item['image'] }}">
-  </div>
-  <div class="description-container">
-    <h3>{{ item['name_' + language] }}</h3>
-    <div class="description-sound-container" *ngIf="item['sound']">
-      <h6>{{ 'PLAY_ME' | translate }}</h6>
-      <audio controls controlsList="nodownload" *ngIf="item['sound']">
-        <source src="{{ item['sound'] }}" type="audio/mpeg">
-        {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
-      </audio>
-    </div>
-    <div class="description-text-container" *ngIf="item['description_' + language]">
-      <h6>{{ 'DESCRIPTION' | translate }}</h6>
-      <audio controls controlsList="nodownload" *ngIf="item['audio_' + language]">
-        <source src="{{ item['audio_' + language] }}" type="audio/mpeg">
-        {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
-      </audio>
-      <p>{{ item['description_' + language] }}</p>
+  <div class="item-container">
+    <ion-slides class="image-slider" loop="true" *ngIf="item['images'].length > 0">
+      <ion-slide class="image-container" *ngFor="let image of item['images']">
+        <img class="image" src="{{ image }}" imageViewer>
+      </ion-slide>
+    </ion-slides>
+    <div class="description-container">
+      <h3>{{ item['name_' + language] }}</h3>
+      <div class="description-sound-container" *ngIf="item['sound']">
+        <h6>{{ 'PLAY_ME' | translate }}</h6>
+        <audio controls controlsList="nodownload" *ngIf="item['sound']">
+          <source src="{{ item['sound'] }}" type="audio/mpeg">
+          {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+        </audio>
+      </div>
+      <div class="description-text-container" *ngIf="item['description_' + language]">
+        <h6>{{ 'DESCRIPTION' | translate }}</h6>
+        <audio controls controlsList="nodownload" *ngIf="item['audio_' + language]">
+          <source src="{{ item['audio_' + language] }}" type="audio/mpeg">
+          {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
+        </audio>
+        <p>{{ item['description_' + language] }}</p>
+      </div>
     </div>
   </div>
 </ion-content>

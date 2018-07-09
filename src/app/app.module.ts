@@ -12,6 +12,8 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule} from "@ngx-translate/core"
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
@@ -35,6 +37,7 @@ import { UITranslationsProvider } from '../providers/ui-translations/ui-translat
   imports: [
     BrowserModule,
     HttpClientModule,
+    IonicImageViewerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

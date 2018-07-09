@@ -18,9 +18,11 @@
 <ion-content padding>
   <div [ngSwitch]="page">
     <div *ngSwitchCase="'description'">
-      <div class="image-container" *ngIf="store['image']">
-        <img class="image" src="{{ store['image'] }}">
-      </div>
+      <ion-slides class="image-slider" loop="true" *ngIf="store['images'].length > 0">
+        <ion-slide class="image-container" *ngFor="let image of store['images']">
+          <img class="image" src="{{ image }}" imageViewer>
+        </ion-slide>
+      </ion-slides>
       <div class="description-container">
         <h3>{{ store['name_' + language] }}</h3>
         <div class="description-text-container" *ngIf="store['description_' + language]">
@@ -37,7 +39,7 @@
       <ion-list>
         <ion-item *ngFor="let id of store['items']" (click)="goToItem(items.get(id))">
           <ion-thumbnail class="item-thumbnail-container" item-start>
-            <img class="item-thumbnail" src="{{ items.get(id)['image'] }}" *ngIf="items.get(id)['image']">
+            <img class="item-thumbnail" src="{{ items.get(id)['images'][0] }}" *ngIf="items.get(id)['images'].length > 0">
           </ion-thumbnail>
           <h2>{{ items.get(id)['name_' + language] }}</h2>
         </ion-item>
