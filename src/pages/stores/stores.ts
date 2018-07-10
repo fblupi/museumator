@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { ItemsPage } from '../items/items';
 
@@ -20,7 +21,8 @@ export class StoresPage {
     private navCtrl: NavController, 
     private navParams: NavParams,
     private translate: TranslateService,
-    public items: ItemsServiceProvider
+    public items: ItemsServiceProvider,
+    public sanitizer: DomSanitizer
   ) {
     this.language = this.translate.currentLang;
     this.store = this.navParams.get('store');

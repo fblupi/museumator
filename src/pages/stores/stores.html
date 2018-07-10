@@ -31,7 +31,7 @@
             <source src="{{ store['audio_' + language] }}" type="audio/mpeg">
             {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
           </audio>
-          <p>{{ store['description_' + language] }}</p>
+          <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(store['description_' + language])"></div>
         </div>
       </div>
     </div>

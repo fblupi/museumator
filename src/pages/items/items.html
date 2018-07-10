@@ -26,7 +26,7 @@
           <source src="{{ item['audio_' + language] }}" type="audio/mpeg">
           {{ 'NO_AUDIO_BROWSER_SUPPORT' | translate }}
         </audio>
-        <p>{{ item['description_' + language] }}</p>
+        <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(item['description_' + language])"></div>
       </div>
     </div>
   </div>
